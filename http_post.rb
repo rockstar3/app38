@@ -37,10 +37,10 @@ req['catalogId'] = '33060'
 req['dimSelected'] = '?Nrpp=20&No=20&pageNum=2&beginIndex=1&endIndex=11&pageFlag=s_20&N=14313+17446&catId=208634&parent_categoryId=208580'
 req['endIndex'] = '11'
 req['isHash'] = false
-req['langId'] = '-1'
-req['pageFlag'] = 's_20'
-req['pageNum'] = '2'
-req['storeId'] = '13052'
+# req['langId'] = '-1'
+# req['pageFlag'] = 's_20'
+# req['pageNum'] = '2'
+# req['storeId'] = '13052'
 
 res = https.request(req)
 puts "Body:", res.body
