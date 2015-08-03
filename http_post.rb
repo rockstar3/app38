@@ -2,24 +2,24 @@ require 'uri'
 require 'net/http'
 require 'net/https'
 
-# @toSend = {
-#     "date" => "2012-07-02",
-#     "aaaa" => "bbbbb",
-#     "cccc" => "dddd"
-# }.to_json
+@toSend = {
+    "date" => "2012-07-02",
+    "aaaa" => "bbbbb",
+    "cccc" => "dddd"
+}.to_json
 
-# uri = URI.parse("http://us.topshop.com/webapp/wcs/stores/servlet/CatalogNavigationSearchResultCmd?
+uri = URI.parse("http://us.topshop.com/webapp/wcs/stores/servlet/CatalogNavigationSearchResultCmd?
 
 
-# 	Nrpp=20&No=20&pageNum=2&beginIndex=1&endIndex=11&pageFlag=s_20&N=14313+17446&catId=208634&parent_categoryId=208580")
-# https = Net::HTTP.new(uri.host,uri.port)
-# https.use_ssl = true
-# # req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
-# req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json', 'User-Agent' => 'ruby'})
-# # req['foo'] = 'bar'
-# # req.body = "[ #{@toSend} ]"
-# res = https.request(req)
-# puts "Response #{res.code} #{res.message}: #{res.body}"
+	Nrpp=20&No=20&pageNum=2&beginIndex=1&endIndex=11&pageFlag=s_20&N=14313+17446&catId=208634&parent_categoryId=208580")
+https = Net::HTTP.new(uri.host,uri.port)
+https.use_ssl = true
+# req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
+req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json', 'User-Agent' => 'ruby'})
+# req['foo'] = 'bar'
+# req.body = "[ #{@toSend} ]"
+res = https.request(req)
+puts "Response #{res.code} #{res.message}: #{res.body}"
 
 
 
