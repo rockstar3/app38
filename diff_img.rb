@@ -8,9 +8,9 @@ MiniMagick::Image.open("http://s7d9.scene7.com/is/image/bebe/rbb-254058-rsg-i2")
 diff_img, diff_metric  = img1[0].compare_channel( img2[0], Magick::MeanSquaredErrorMetric )
 
 
-img1 = Curl.get("http://s7d9.scene7.com/is/image/bebe/noimage")
-img2 = Curl.get("http://s7d9.scene7.com/is/image/bebe/noimage2")
-img3 = Curl.get("http://s7d9.scene7.com/is/image/bebe/rbb-254058-rsg-i2")
+# img1 = Curl.get("http://s7d9.scene7.com/is/image/bebe/noimage")
+# img2 = Curl.get("http://s7d9.scene7.com/is/image/bebe/noimage2")
+# img3 = Curl.get("http://s7d9.scene7.com/is/image/bebe/rbb-254058-rsg-i2")
 
 
 Digest::MD5.file "logo1.png"
