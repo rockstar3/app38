@@ -18,8 +18,8 @@ https.use_ssl = true
 req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json', 'User-Agent' => 'ruby'})
 # req['foo'] = 'bar'
 # req.body = "[ #{@toSend} ]"
-res = https.request(req)
-puts "Response #{res.code} #{res.message}: #{res.body}"
+# res = https.request(req)
+# puts "Response #{res.code} #{res.message}: #{res.body}"
 
 
 
