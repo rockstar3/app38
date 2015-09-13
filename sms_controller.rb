@@ -1,15 +1,16 @@
 
 class SmsController < ApplicationController
   before_filter :authenticate_user
-  
+  def update_queue
+    
+  end
   def twilio_callback
     @customer_id = params[:customer]
     @user_id = params[:user]
     message_sid = params[:SmsSid]
     status = params[:SmsStatus]
     sms_message_sid = params[:SmsMessageSid]   
-    
-     
+         
     # Update message status in queues table
     @queues = Queues.where('message_sid=? and user_id=?', message_sid, @user_id)
     if @queues.nil? or @queues.blank?
@@ -36,9 +37,7 @@ class SmsController < ApplicationController
       @customer = Customer.update_all({:opt_out => '1'}, {:phone => phone})
     end      
   end
-  def update_queue
-    
-  end
+
   def show_messages
     #@queues = Queues.find(:condition => ["user_id" => current_user.id])
     client = Twilio::REST::Client.new(TWILIO_CONFIG['sid'], TWILIO_CONFIG['token'])
