@@ -47,11 +47,11 @@ def main(auto = false)
     b.select_list(:id => 'citySize').option(:value => "all").select
     state_detail_doc = Nokogiri::HTML(b.html)
     cities = get_cities(state_detail_doc)
-    # puts cities[0]    
-    # puts cities.count
+    puts cities[0]    
+    puts cities.count
     
-    # puts "http://www.city-data.com/city/#{cities[0]['href']}"
-    # b.goto "http://www.city-data.com/city/#{cities[0]['href']}"
+    puts "http://www.city-data.com/city/#{cities[0]['href']}"
+    b.goto "http://www.city-data.com/city/#{cities[0]['href']}"
     puts cities[0][:url]
     
     b.a(href: "#{cities[0][:url]}").click
